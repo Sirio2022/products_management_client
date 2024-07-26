@@ -1,4 +1,5 @@
 # Products Management Application
+![Captura de pantalla 2024-07-26 111337](https://github.com/user-attachments/assets/811979bb-3ef7-4dd7-8ad3-f462c7cee144)
 
 ## Descripción
 
