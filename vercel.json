@@ -1,13 +1,9 @@
 {
-  "routes": [
-    {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
-    },
-    {
-      "src": "/api-docs",
-      "dest": "/path-to-swagger-docs"
-    }
-  ]
-}
+    "routes": [
+      {
+        "src": "/[^.]+",
+        "dest": "/",
+        "status": 200
+      }
+    ]
+  }
