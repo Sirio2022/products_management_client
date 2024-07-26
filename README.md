@@ -6,6 +6,8 @@
 
 Una aplicación para gestionar productos, que permite crear, editar, y eliminar productos.
 
+Aplicación hecha con Typescript - Postgresql - Express - React - Node - AWS RDS - Tailwindcss.
+
 ## Características
 
 - Listar productos
