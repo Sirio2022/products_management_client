@@ -12,14 +12,14 @@ Una aplicación para gestionar productos, que permite crear, editar, y eliminar 
 - Editar productos existentes
 - Eliminar productos
 
-## Instalación
+## Servicios
 
-Sigue estos pasos para instalar y configurar la aplicación:
+- Backend: Node - Express - Sequelize
+- Documentation: Swagger
+- Database: AWS RDS
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/tu-repositorio.git
+## INFO:
+www.linkedin.com/in/juanmanuelalvarezb
 
-# Instalar dependencias
-pnpm install
-```
+
+
