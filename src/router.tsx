@@ -37,7 +37,7 @@ const routes: RouteObject[] = [
       {
         path: 'delete/product/:id',
         action: deleteProductAction,
-      }
+      },
     ],
   },
 ];

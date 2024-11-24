@@ -78,7 +78,7 @@ export async function patchProductAction({ request }: ActionFunctionArgs) {
 
   const { id } = data;
 
-  if (id !== undefined) {
+  if (id !== undefined && id !== '') {
     await patchProduct(+id);
   }
 
