@@ -55,7 +55,7 @@ export async function editProductAction({
   if (!hasEmptyFields) {
     const { id } = params;
 
-    if (id !== undefined) {
+    if (id !== undefined && id !== '') {
       await updateProduct(+id, data);
       return redirect('/');
     }
