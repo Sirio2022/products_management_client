@@ -3,7 +3,7 @@ import { Product } from '../types';
 import { currencyFormat } from '../utils';
 
 type ProdutsDetailsProps = {
-  product: Product;
+  readonly product: Product;
 };
 
 export default function ProductsDetails({ product }: ProdutsDetailsProps) {
