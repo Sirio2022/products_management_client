@@ -1,16 +1,16 @@
-import { toast } from 'react-toastify';
-import { parse, pipe, string, transform } from 'valibot';
+import { toast } from 'react-toastify'
+import { parse, pipe, string, transform } from 'valibot'
 import {
   DraftProductSchema,
   ProductListSchema,
   Product,
   ProductSchema,
-  EditProductSchema,
-} from '../types';
-import axios from 'axios';
+  EditProductSchema
+} from '../types'
+import axios from 'axios'
 
 interface ProductData {
-  [k: string]: FormDataEntryValue;
+  [k: string]: FormDataEntryValue
 }
 
 export async function addProduct(data: ProductData) {
@@ -18,51 +18,51 @@ export async function addProduct(data: ProductData) {
     const NumberSchema = pipe(
       string(),
       transform((value) => +value)
-    );
+    )
 
     const result = parse(DraftProductSchema, {
       name: data.name,
-      price: parse(NumberSchema, data.price),
-    });
+      price: parse(NumberSchema, data.price)
+    })
 
     if (result) {
-      const url = `${import.meta.env.VITE_API_URL}/api/products`;
+      const url = `${import.meta.env.VITE_API_URL}/api/products`
       const { data } = await axios.post(url, {
         name: result.name,
-        price: result.price,
-      });
+        price: result.price
+      })
 
-      toast.success(data.message);
+      toast.success(data.message)
     } else {
-      throw new Error('Invalid data');
+      throw new Error('Invalid data')
     }
   } catch (error) {
-    console.error('Error adding product', error);
+    console.error('Error adding product', error)
   }
 }
 
 export async function getProducts() {
   try {
-    const url = `${import.meta.env.VITE_API_URL}/api/products`;
-    const { data } = await axios.get(url);
+    const url = `${import.meta.env.VITE_API_URL}/api/products`
+    const { data } = await axios.get(url)
 
-    const result = parse(ProductListSchema, data.data);
+    const result = parse(ProductListSchema, data.data)
 
-    return result;
+    return result
   } catch (error) {
-    console.error('Error getting products', error);
+    console.error('Error getting products', error)
   }
 }
 
 export async function getProductById(id: Product['id']) {
   try {
-    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
-    const { data } = await axios.get(url);
-    const result = parse(ProductSchema, data.data);
+    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
+    const { data } = await axios.get(url)
+    const result = parse(ProductSchema, data.data)
 
-    return result;
+    return result
   } catch (error) {
-    console.error('Error getting product', error);
+    console.error('Error getting product', error)
   }
 }
 
@@ -71,54 +71,54 @@ export async function updateProduct(id: Product['id'], data: ProductData) {
     const NumberSchema = pipe(
       string(),
       transform((value) => +value)
-    );
+    )
 
     const availableSchema = pipe(
       string(),
       transform((value) => value === 'true')
-    );
+    )
 
     const result = parse(EditProductSchema, {
       name: data.name,
       price: parse(NumberSchema, data.price),
-      available: parse(availableSchema, data.available),
-    });
+      available: parse(availableSchema, data.available)
+    })
 
     if (result) {
-      const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
+      const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
       const { data } = await axios.put(url, {
         name: result.name,
         price: result.price,
-        available: result.available,
-      });
+        available: result.available
+      })
 
-      toast.success(data.message);
+      toast.success(data.message)
     } else {
-      throw new Error('Invalid data');
+      throw new Error('Invalid data')
     }
   } catch (error) {
-    console.error('Error updating product', error);
+    console.error('Error updating product', error)
   }
 }
 
 export async function deleteProduct(id: Product['id']) {
   try {
-    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
-    const { data } = await axios.delete(url);
+    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
+    const { data } = await axios.delete(url)
 
-    toast.success(data.message);
+    toast.success(data.message)
   } catch (error) {
-    console.error('Error deleting product', error);
+    console.error('Error deleting product', error)
   }
 }
 
 export async function patchProduct(id: Product['id']) {
   try {
-    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
-    const { data } = await axios.patch(url);
+    const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
+    const { data } = await axios.patch(url)
 
-    toast.success(data.message);
+    toast.success(data.message)
   } catch (error) {
-    console.error('Error patching product', error);
+    console.error('Error patching product', error)
   }
 }

@@ -1,15 +1,14 @@
-import { Form, useFetcher, useNavigate } from 'react-router-dom';
-import { Product } from '../types';
-import { currencyFormat } from '../utils';
+import { Form, useFetcher, useNavigate } from 'react-router-dom'
+import { Product } from '../types'
+import { currencyFormat } from '../utils'
 
 type ProdutsDetailsProps = {
-  readonly product: Product;
-};
+  readonly product: Product
+}
 
 export default function ProductsDetails({ product }: ProdutsDetailsProps) {
-
-  const fetcher = useFetcher();
-  const navigate = useNavigate();
+  const fetcher = useFetcher()
+  const navigate = useNavigate()
 
   return (
     <tr className="border-b">
@@ -39,7 +38,6 @@ export default function ProductsDetails({ product }: ProdutsDetailsProps) {
           >
             {product.available ? 'Disponible' : 'No disponible'}
           </button>
-        
         </fetcher.Form>
       </td>
       <td className="p-3 text-lg text-gray-800 ">
@@ -56,7 +54,7 @@ export default function ProductsDetails({ product }: ProdutsDetailsProps) {
             action={`delete/product/${product.id}`}
             onSubmit={(e) => {
               if (!confirm('Are you sure you want to delete this product?')) {
-                e.preventDefault();
+                e.preventDefault()
               }
             }}
           >
@@ -69,5 +67,5 @@ export default function ProductsDetails({ product }: ProdutsDetailsProps) {
         </div>
       </td>
     </tr>
-  );
+  )
 }

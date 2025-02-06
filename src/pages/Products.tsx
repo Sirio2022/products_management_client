@@ -9,7 +9,10 @@ export default function Products() {
     <div className="p-4 sm:p-6 lg:p-8">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">Products</h2>
-        <Link to="/add-product" className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+        <Link
+          to="/add-product"
+          className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+        >
           Add Product
         </Link>
       </div>

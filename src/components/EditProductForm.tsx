@@ -1,15 +1,15 @@
-import { useId } from 'react';
-import { Form } from 'react-router-dom';
-import ErrorMessage from './ErrorMessage';
-import { useProducts } from '../hooks/useProducts';
-import { availabilityOptions } from '../data';
+import { useId } from 'react'
+import { Form } from 'react-router-dom'
+import ErrorMessage from './ErrorMessage'
+import { useProducts } from '../hooks/useProducts'
+import { availabilityOptions } from '../data'
 
 export default function EditProductForm() {
-  const name = useId();
-  const price = useId();
-  const available = useId();
+  const name = useId()
+  const price = useId()
+  const available = useId()
 
-  const { error, editProduct } = useProducts();
+  const { error, editProduct } = useProducts()
 
   return (
     <>
@@ -67,5 +67,5 @@ export default function EditProductForm() {
         />
       </Form>
     </>
-  );
+  )
 }

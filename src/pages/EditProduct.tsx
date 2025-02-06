@@ -1,9 +1,7 @@
-import { Link} from 'react-router-dom';
-import EditProductForm from '../components/EditProductForm';
+import { Link } from 'react-router-dom'
+import EditProductForm from '../components/EditProductForm'
 
 export default function EditProduct() {
-
-  
   return (
     <>
       <div className="flex justify-between">
@@ -18,5 +16,5 @@ export default function EditProduct() {
 
       <EditProductForm />
     </>
-  );
+  )
 }
