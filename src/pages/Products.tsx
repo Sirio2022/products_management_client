@@ -1,23 +1,23 @@
-import { Link } from 'react-router-dom';
-import ProductsDetails from '../components/ProductsDetails';
-import { useProducts } from '../hooks/useProducts';
+import { Link } from 'react-router-dom'
+import ProductsDetails from '../components/ProductsDetails'
+import { useProducts } from '../hooks/useProducts'
 
 export default function Products() {
-  const { productsList } = useProducts();
+  const { productsList } = useProducts()
 
   return (
-    <>
-      <div className="flex justify-between">
-        <h2 className="text-4xl font-black text-slate-500">Products</h2>
+    <div className="p-4 sm:p-6 lg:p-8">
+      <div className="flex justify-between items-center">
+        <h2 className="text-2xl font-bold">Products</h2>
         <Link
           to="/new/product"
-          className="bg-slate-500 text-white px-4 py-2 rounded-md hover:bg-slate-600 uppercase font-bold shadow-lg"
+          className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
         >
           Add Product
         </Link>
       </div>
 
-      <div className="p-2">
+      <div className="px-2 overflow-x-auto">
         <table className="w-full mt-5 table-auto">
           <thead className="bg-slate-800 text-white">
             <tr>
@@ -34,6 +34,6 @@ export default function Products() {
           </tbody>
         </table>
       </div>
-    </>
-  );
+    </div>
+  )
 }
