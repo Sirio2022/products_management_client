@@ -8,9 +8,9 @@ import {
   deleteProduct,
   getProductById,
   patchProduct,
-  updateProduct
+  updateProduct,
+  getProducts
 } from '../services/ProductService'
-import { getProducts } from '../services/ProductService'
 
 export async function addProductAction({ request }: ActionFunctionArgs) {
   const data = Object.fromEntries(await request.formData())
