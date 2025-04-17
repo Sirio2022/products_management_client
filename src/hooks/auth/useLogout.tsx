@@ -6,6 +6,7 @@ export function useLogout() {
   const logout = () => {
     localStorage.removeItem('AccessToken')
     queryClient.invalidateQueries({ queryKey: ['user'] })
+    queryClient.invalidateQueries({ queryKey: ['products'] })
   }
 
   return {
