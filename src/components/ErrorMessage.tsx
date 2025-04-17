@@ -1,8 +1,13 @@
 import { PropsWithChildren } from 'react'
 
-export default function ErrorMessage({ children }: PropsWithChildren) {
+export default function ErrorMessage({
+  children
+}: Readonly<PropsWithChildren>) {
   return (
-    <div className=" text-center my-8 text-red-600 font-bold uppercase">
+    <div
+      className="text-red-500 text-sm mt-1"
+      role="alert"
+    >
       {children}
     </div>
   )
